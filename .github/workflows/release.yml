@@ -7,24 +7,41 @@ on:
       - main
 
 jobs:
-  build:
+  release:
     runs-on: ubuntu-latest
     steps:
+      # create a release PR
+      - uses: google-github-actions/release-please-action@v3
+        id: release
+        with:
+          release-type: node
+          package-name: wallet-connect-auth
+          # Should breaking changes before 1.0.0 produce minor bumps?
+          bump-minor-pre-major: true
+          # Should feat changes before 1.0.0 produce patch bumps
+          # instead of minor bumps?
+          bump-patch-for-minor-pre-major: true
+
+      # build and publish release artifacts
       - uses: actions/checkout@v3
+        # these if statements ensure that a publication only occurs when
+        # a new release is created (cf. also the release-please documentation:
+        # https://github.com/marketplace/actions/release-please-action#outputs)
+        if: ${{ steps.release.outputs.release_created }}
       - uses: actions/setup-node@v1
         with:
-          node-version: 16
-      - name: Make the production plugin bundle
+          node-version: 19
+        if: ${{ steps.release.outputs.release_created }}
+      - name: build the production plugin bundle
         run: |
           release_version=$(cat package.json | jq -r '.version')
           echo "RELEASE_VERSION=$release_version" >> $GITHUB_ENV
-          yarn
-          yarn build
-      - name: Perform Github Release
+          pnpm i
+          pnpm build
+        if: ${{ steps.release.outputs.release_created }}
+      - name: add assets to the github release
         uses: softprops/action-gh-release@v1
         with:
-          name: v${{ env.RELEASE_VERSION }}
-          tag_name: v${{ env.RELEASE_VERSION }}
-          generate_release_notes: true
           files: |
             dist/*.tar.gz
+        if: ${{ steps.release.outputs.release_created }}
