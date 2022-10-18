@@ -1,0 +1,17 @@
+{
+  "type": "component",
+  "metadata": {},
+  "schema": {
+    "name": "wallet-connect-auth",
+    "friendlyName": "wallet-connect-auth",
+    "description": "Budibase Plugin for Wallet Connect Auth SDK",
+    "icon": "Text",
+    "settings": [
+      {
+        "type": "text",
+        "key": "text",
+        "label": "Text"
+      }
+    ]
+  }
+}
