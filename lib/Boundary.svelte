@@ -1,18 +1,17 @@
-
 <script>
-    import pkg from "../package.json"
-    import { getContext } from "svelte"
+  import pkg from '../package.json'
+  import { getContext } from 'svelte'
 
-    export let error = null
+  export let error = null
 
-    const { styleable } = getContext("sdk")
-    const component = getContext("component")
+  const { styleable } = getContext('sdk')
+  const component = getContext('component')
 
-    $: styles = {
-      normal: {},
-      id: $component.id,
-      interactive: true
-    }
+  $: styles = {
+    normal: {},
+    id: $component.id,
+    interactive: true
+  }
 </script>
 
 {#if $error}

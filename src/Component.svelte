@@ -1,10 +1,10 @@
 <script>
-  import { getContext } from "svelte"
+  import { getContext } from 'svelte'
 
   export let text
 
-  const { styleable } = getContext("sdk")
-  const component = getContext("component")
+  const { styleable } = getContext('sdk')
+  const component = getContext('component')
 </script>
 
 <div use:styleable={$component.styles}>
