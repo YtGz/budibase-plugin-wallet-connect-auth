@@ -25,8 +25,8 @@ jobs:
       # build and publish release artifacts
       - uses: actions/checkout@v3
         # these if statements ensure that a publication only occurs when
-        # a new release is created (cf. also the release-please documentation:
-        # https://github.com/marketplace/actions/release-please-action#outputs)
+        # a new release is created, cf. also the release-please documentation:
+        # https://github.com/marketplace/actions/release-please-action#outputs
         if: ${{ steps.release.outputs.release_created }}
       - uses: pnpm/action-setup@v2
         with:
@@ -46,6 +46,7 @@ jobs:
       - name: add assets to the github release
         uses: softprops/action-gh-release@v1
         with:
+          tag_name: ${{ steps.release.outputs.tag_name }}
           files: |
             dist/*.tar.gz
         if: ${{ steps.release.outputs.release_created }}
