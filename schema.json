@@ -3,14 +3,22 @@
   "metadata": {},
   "schema": {
     "name": "wallet-connect-auth",
-    "friendlyName": "wallet-connect-auth",
+    "friendlyName": "Wallet Connect",
     "description": "Budibase Plugin for Wallet Connect Auth SDK",
-    "icon": "Text",
-    "settings": [
+    "icon": "Link",
+    "hasChildren": true,
+    "settings": [],
+    "context": [
       {
-        "type": "text",
-        "key": "text",
-        "label": "Text"
+        "type": "static",
+        "values": [
+          {
+            "label": "Web3Provider",
+            "key": "web3Provider",
+            "type": "object",
+            "defaultValue": "undefined"
+          }
+        ]
       }
     ]
   }

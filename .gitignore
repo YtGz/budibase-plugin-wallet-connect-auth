@@ -104,3 +104,7 @@ dist
 .tern-port
 
 .idea/
+
+# docker compose configuration
+# for budibase dev environment
+docker-compose.yaml

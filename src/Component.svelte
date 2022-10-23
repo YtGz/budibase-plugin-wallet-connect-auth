@@ -1,12 +1,17 @@
 <script>
   import { getContext } from 'svelte'
 
-  export let text
-
-  const { styleable } = getContext('sdk')
+  const { styleable, Provider } = getContext('sdk')
   const component = getContext('component')
+
+  let web3Provider = undefined
+  $: dataContext = {
+    web3Provider
+  }
 </script>
 
 <div use:styleable={$component.styles}>
-  This is a custom component. The text setting is: {text}.
+  <Provider data={dataContext}>
+    <slot />
+  </Provider>
 </div>
