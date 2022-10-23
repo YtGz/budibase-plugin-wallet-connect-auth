@@ -1,5 +1,6 @@
 <script>
   import { getContext } from 'svelte'
+  import { Button } from '@budibase/bbui'
   import { AuthClient, generateNonce } from '@walletconnect/auth-client'
   import QRCodeModal from '@walletconnect/qrcode-modal'
 
@@ -59,9 +60,13 @@
 </script>
 
 <div use:styleable={$component.styles}>
-  {#await authClientPromise then}
-    <button on:click={authenticate}>Connect Wallet</button>
-  {/await}
+  {#if !isAuthenticated}
+    {#await authClientPromise}
+      <Button primary={true} disabled={true}>Connect Wallet</Button>
+    {:then}
+      <Button on:click={authenticate} primary={true}>Connect Wallet</Button>
+    {/await}
+  {/if}
   <Provider data={dataContext}>
     <slot />
   </Provider>
