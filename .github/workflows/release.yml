@@ -29,6 +29,8 @@ jobs:
         # https://github.com/marketplace/actions/release-please-action#outputs)
         if: ${{ steps.release.outputs.release_created }}
       - uses: pnpm/action-setup@v2
+        with:
+          version: 7
       - uses: actions/setup-node@v3
         with:
           node-version: 19
