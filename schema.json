@@ -7,16 +7,56 @@
     "description": "Budibase Plugin for Wallet Connect Auth SDK",
     "icon": "Link",
     "hasChildren": true,
-    "settings": [],
+    "settings": [
+      {
+        "type": "text",
+        "label": "Wallet Connect Cloud Project Id",
+        "key": "walletConnectCloudProjectId",
+        "required": true
+      },
+      {
+        "type": "text",
+        "label": "dApp Name",
+        "key": "dAppName",
+        "required": true
+      },
+      {
+        "type": "text",
+        "label": "dApp Description",
+        "key": "dAppDescription"
+      },
+      {
+        "type": "text",
+        "label": "dApp Domain",
+        "key": "dAppDomain",
+        "required": true
+      },
+      {
+        "type": "text",
+        "label": "dApp URL",
+        "key": "dAppUrl",
+        "required": true
+      },
+      {
+        "type": "text",
+        "label": "dApp Icon",
+        "key": "dAppIcon"
+      },
+      {
+        "type": "text",
+        "label": "Chain Id",
+        "key": "dAppChainId"
+      }
+    ],
     "context": [
       {
         "type": "static",
         "values": [
           {
-            "label": "Web3Provider",
-            "key": "web3Provider",
-            "type": "object",
-            "defaultValue": "undefined"
+            "label": "isAuthenticated",
+            "key": "isAuthenticated",
+            "type": "boolean",
+            "defaultValue": false
           }
         ]
       }

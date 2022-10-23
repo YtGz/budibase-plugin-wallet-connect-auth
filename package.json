@@ -22,7 +22,10 @@
   },
   "dependencies": {
     "@crownframework/svelte-error-boundary": "^1.0.3",
-    "svelte": "^3.49.0"
+    "@walletconnect/auth-client": "^0.4.0",
+    "@walletconnect/qrcode-modal": "^1.8.0",
+    "svelte": "^3.49.0",
+    "tslib": "^2.4.0"
   },
   "devDependencies": {
     "@budibase/backend-core": "^2.0.13",
@@ -47,5 +50,10 @@
     "rollup-plugin-svg": "^2.0.0",
     "rollup-plugin-terser": "^7.0.2",
     "tar": "^6.1.11"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "hash.js@1.1.7": "patches/hash.js@1.1.7.patch"
+    }
   }
 }
