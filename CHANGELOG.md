@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/YtGz/budibase-plugin-wallet-connect-auth/compare/v0.1.2...v0.1.3) (2022-10-23)
+
+
+### Features
+
+* use bbui button ([b1e378c](https://github.com/YtGz/budibase-plugin-wallet-connect-auth/commit/b1e378cebdb9a57bc97f1ca74ea03f2f74ef0207))
+
 ## [0.1.2](https://github.com/YtGz/budibase-plugin-wallet-connect-auth/compare/v0.1.1...v0.1.2) (2022-10-23)
 
 
