@@ -28,9 +28,11 @@ jobs:
         # a new release is created (cf. also the release-please documentation:
         # https://github.com/marketplace/actions/release-please-action#outputs)
         if: ${{ steps.release.outputs.release_created }}
-      - uses: actions/setup-node@v1
+      - uses: pnpm/action-setup@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: 19
+          cache: 'pnpm'
         if: ${{ steps.release.outputs.release_created }}
       - name: build the production plugin bundle
         run: |
