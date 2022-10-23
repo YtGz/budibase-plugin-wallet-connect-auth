@@ -1,6 +1,6 @@
 {
   "name": "wallet-connect-auth",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Budibase Plugin for Wallet Connect Auth SDK",
   "author": "Philipp Wirtenberger",
   "license": "MIT",
