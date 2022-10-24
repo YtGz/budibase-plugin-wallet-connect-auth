@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.4](https://github.com/YtGz/budibase-plugin-wallet-connect-auth/compare/v0.1.3...v0.1.4) (2022-10-24)
+
+
+### Features
+
+* provide wallet address in context ([611185c](https://github.com/YtGz/budibase-plugin-wallet-connect-auth/commit/611185c3e0853546c38f4521a5b1272fa91d850c))
+
 ## [0.1.3](https://github.com/YtGz/budibase-plugin-wallet-connect-auth/compare/v0.1.2...v0.1.3) (2022-10-23)
 
 
