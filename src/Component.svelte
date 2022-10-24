@@ -16,8 +16,9 @@
   export let dAppChainId = 'eip155:1'
 
   let isAuthenticated = false
+  let walletAddress
   $: dataContext = {
-    isAuthenticated
+    walletAddress
   }
 
   const authClientPromise = AuthClient.init({
@@ -49,6 +50,7 @@
       if (Boolean(params.result?.s)) {
         // Response contained a valid signature -> user is authenticated.
         console.log('Authentication successful.')
+        walletAddress = params.result?.p.iss.split(':')[4]
         isAuthenticated = true
         QRCodeModal.close()
       } else {
