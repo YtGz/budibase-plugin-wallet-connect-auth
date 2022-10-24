@@ -23,7 +23,7 @@
   "dependencies": {
     "@budibase/bbui": "^2.0.34",
     "@crownframework/svelte-error-boundary": "^1.0.3",
-    "@walletconnect/auth-client": "^0.4.0",
+    "@walletconnect/auth-client": "^1.0.0",
     "@walletconnect/qrcode-modal": "^1.8.0",
     "svelte": "^3.49.0",
     "tslib": "^2.4.0"
