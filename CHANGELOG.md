@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.2.0](https://github.com/YtGz/budibase-plugin-wallet-connect-auth/compare/v0.1.4...v0.2.0) (2022-10-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* Required to keep https://react-auth-wallet.walletconnect.com test wallet working.
+
+### Build System
+
+* update to @walletconnect/auth-client@1.0.0 ([c444b92](https://github.com/YtGz/budibase-plugin-wallet-connect-auth/commit/c444b92abac93cf649787fb01512b0c33b4fb98e))
+
 ## [0.1.4](https://github.com/YtGz/budibase-plugin-wallet-connect-auth/compare/v0.1.3...v0.1.4) (2022-10-24)
 
 
